@@ -1,1 +1,22 @@
-{"nombre":"Lucho","rut":"85405761","curso":"acordeón","nivel":"Experto"}
+{
+  "estudiantes": [
+    {
+      "nombre": "Daniela Aros",
+      "rut": "185405752",
+      "curso": "Bateria",
+      "nivel": "Intermedio"
+    },
+    {
+      "nombre": "Franco Guerra",
+      "rut": "216378460",
+      "curso": "Bajo",
+      "nivel": "Intermedio"
+    },
+    {
+      "nombre": "Luisa Díaz",
+      "rut": "96378443",
+      "curso": "Arpa",
+      "nivel": "Avanzado"
+    }
+  ]
+}

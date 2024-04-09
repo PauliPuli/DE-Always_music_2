@@ -1,5 +1,5 @@
 import pool from "../config/estudiantes.js";
-import estudiantes from "../index.js";
+// import estudiantes from "../index.js";
 //Capturar datos
 const estudiante = process.argv.slice(2);
 const opcion = estudiante[0];

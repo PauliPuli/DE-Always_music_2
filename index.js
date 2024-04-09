@@ -1,21 +1,30 @@
 import fs from "fs";
 
-    //   const estudianteAM= {
-    //   nombre:'Lucho',
-    //   rut:'85405761',
-    //   curso:'acordeón' ,
-    //   nivel:'Experto',
-    // };
+const estudianteAM = {
+    nombre: "Luisa Díaz",
+    rut: "96378443",
+    curso: "Arpa",
+    nivel: "Avanzado",
+};
 
-    // fs.writeFileSync("estudiantes.json", JSON.stringify(estudianteAM)); 
-    // console.log('Usuario almacenado con éxito'); 
+let estudiantes = [];
 
-fs.readFile('estudiantes.json','utf8', function(e,data){
-    let estudianteAM= JSON.parse(data);
-    console.log(estudianteAM)
-});
-    // estudiantes.push(estudianteAM); 
+try {
+  const data = fs.readFileSync("estudiantes.json", "utf8");
+  const estudiantesData = JSON.parse(data);
+  if (estudiantesData.estudiantes) {
+    estudiantes = estudiantesData.estudiantes;
+  }
+} catch (error) {
+  console.log("No se pudo leer el archivo estudiantes.json: " + error.message);
+}
+estudiantes.push(estudianteAM);
 
-    // res.json(estudiantes);
 
+  
+  
+  fs.writeFileSync("estudiantes.json", JSON.stringify({ estudiantes }));
+  console.log("Usuario almacenado con éxito");
+  
+  
 

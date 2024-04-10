@@ -1,6 +1,8 @@
 import pool from "../config/estudiantes.js";
-// import estudiantes from "../index.js";
+import agregarJson from "../index.js";
+
 //Capturar datos
+const estudiantes = [];//Captura datos al JSON
 const estudiante = process.argv.slice(2);
 const opcion = estudiante[0];
 const nombre = estudiante[1];
@@ -84,13 +86,16 @@ try{
 
 if (opcion === "add") {
   addEstudiante(nombre, rut, curso, nivel);
+  agregarJson(nombre, rut, curso, nivel);
 } else if (opcion === "show") {
   showEstudiante();
 } else if (opcion === "update") {
   updateEstudiante(nombre, rut, curso, nivel);
+  agregarJson(nombre, rut, curso, nivel);
 } else if (opcion === "delete") {
   rut = estudiante[1];
   deleteEstudiante(rut);
+  agregarJson()
 } else if (opcion == "select") {
   rut = estudiante[1]; //
   selectEstudiante(rut);

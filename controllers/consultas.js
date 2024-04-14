@@ -1,5 +1,5 @@
 import pool from "../config/estudiantes.js";
-import agregarJson from "../index.js";
+import {agregarJson, eliminarJson, mostrarJson, selectJson, actualizarJSON} from "../index.js";
 
 //Capturar datos
 const estudiantes = [];//Captura datos al JSON
@@ -88,17 +88,19 @@ if (opcion === "add") {
   addEstudiante(nombre, rut, curso, nivel);
   agregarJson(nombre, rut, curso, nivel);
 } else if (opcion === "show") {
-  showEstudiante();
+  showEstudiante(estudiante);
+  mostrarJson(estudiantes);
 } else if (opcion === "update") {
   updateEstudiante(nombre, rut, curso, nivel);
-  agregarJson(nombre, rut, curso, nivel);
+  actualizarJSON(nombre, rut, curso, nivel);
 } else if (opcion === "delete") {
   rut = estudiante[1];
   deleteEstudiante(rut);
-  agregarJson()
+  eliminarJson(rut)
 } else if (opcion == "select") {
   rut = estudiante[1]; //
   selectEstudiante(rut);
+  selectJson(rut)
 } else {
   console.log("Función o acción no existente");
 }

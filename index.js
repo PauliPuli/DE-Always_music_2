@@ -1,4 +1,8 @@
+import express from "express";
+const app = express();
 import fs from "fs";
+
+app.use(express.static('img'));
 
 const agregarJson= (nombre, rut, curso, nivel)=>{
     const estudianteAM = {
